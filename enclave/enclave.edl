@@ -1,0 +1,12 @@
+enclave {
+    trusted {
+		/* add secret to sealed file */
+		public void add_secret(int secret);
+		public void print_secrets();
+    };
+
+	from "../sgx-lib/sgx_lib_t/sgx_lib.edl" import *;
+    untrusted {
+
+	};
+};
