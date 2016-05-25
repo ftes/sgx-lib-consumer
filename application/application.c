@@ -12,11 +12,13 @@ int main(int argc, char* argv[])
 {
   sgx_enclave_id_t eid;
   int secret;
+  uint8_t key[128] = {0};
 
   // Launch the enclave
   if (launch_enclave(ENCLAVE_FILE, &eid) != SGX_SUCCESS) return -1;
 
   // Interact with the enclave
+  set_key(eid, key);
   printf("Secret to seal by the enclave (-1 to reuse old secret): ");
   scanf("%d%*c", &secret);
   if (secret != -1) {
