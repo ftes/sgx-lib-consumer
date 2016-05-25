@@ -24,6 +24,8 @@ int main(int argc, char* argv[])
   }
   print_secrets(eid);
 
+  test_encryption(eid);
+
   // Destroy the enclave
   if(destroy_enclave(eid) != SGX_SUCCESS) return -1;
 

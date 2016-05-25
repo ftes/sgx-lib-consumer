@@ -3,6 +3,7 @@ enclave {
 		/* add secret to sealed file */
 		public void add_secret(int secret);
 		public void print_secrets();
+		public void test_encryption();
     };
 
 	from "../sgx-lib/sgx_lib_t/sgx_lib.edl" import *;
